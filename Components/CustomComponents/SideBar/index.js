@@ -6,8 +6,8 @@ import {
   Divider,
   IconButton,
   MenuIcon,
-  MuiDrawer,
-  MuiAppBar,
+  Drawer,
+  AppBar,
   Toolbar,
   List,
   CssBaseline,
@@ -54,7 +54,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }))
 
-const AppBar = styled(MuiAppBar, {
+const CustomAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
@@ -72,7 +72,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }))
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const CustomDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     width: drawerWidth,
     flexShrink: 0,
@@ -88,7 +88,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
   }),
 )
-const Sidebar = () => {
+ function Sidebar () {
   const theme = useTheme()
   const [open, setOpen] = React.useState(false)
 
@@ -103,7 +103,7 @@ const Sidebar = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position='fixed' open={open}>
+      <CustomAppBar position='fixed' open={open}>
         <Toolbar>
           <IconButton
             color='inherit'
@@ -121,8 +121,8 @@ const Sidebar = () => {
             Mini variant drawer
           </Typography>
         </Toolbar>
-      </AppBar>
-      <Drawer variant='permanent' open={open}>
+      </CustomAppBar>
+      <CustomDrawer variant='permanent' open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -178,7 +178,7 @@ const Sidebar = () => {
             </ListItem>
           ))}
         </List>
-      </Drawer>
+      </CustomDrawer>
       <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
@@ -208,4 +208,5 @@ const Sidebar = () => {
     </Box>
   )
 }
+
 export default Sidebar
