@@ -1,0 +1,45 @@
+.container {
+    width: 90%;
+    margin: 50px auto;
+    min-height:100px;
+    padding:3%;
+}
+
+.title {
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.title_txt {
+    margin-top: 2%;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--black-color)
+}
+
+.desc_txt {
+    color: var(--grey-color-1);
+    font-family: Raleway, Arial;
+    font-weight: bold;
+    margin-left: 10px
+}
+
+.iconButton {
+    background-color: var(--grey-color-3);
+    border-radius: 25%;
+}
+
+.subtitle {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    color: var(--grey-color-1);
+}
+
+.button_container {
+    text-align: end;
+    margin-bottom: 20px;
+}
