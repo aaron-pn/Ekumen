@@ -1,0 +1,32 @@
+.publication_container {
+    padding: 16px;
+    min-height: 150px;
+}
+
+.media_container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.navigation_bar {
+    /*className='d-flex justify-content-between'*/
+    display:flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.icon_buttons {
+    display:flex;
+    align-items: center;
+    min-width: 40%;
+}
+
+.space {
+    margin-left: 20%;
+}
+
+.align_end {
+    text-align: end;
+}

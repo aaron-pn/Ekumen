@@ -5,7 +5,8 @@ import UserStatus from 'Components/CustomComponents/UserStatus'
 export default function MainRoute() {
   return (
     <div>
-      running
+      {/* <UserStatus title="magnus" description="ahhh sos picante" isActive/> */}
+      <Publication/>
       {/* <Sidebar /> */}
     </div>
   )

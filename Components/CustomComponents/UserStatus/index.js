@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { Avatar, Badge, Typography } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
+import styles from './UserStatus.module.css'
+
 const StyledBadge = styled(Badge)(({ theme }) => {
   return {
     '& .MuiBadge-badge': {
@@ -42,7 +44,7 @@ export default function UserStatus({
   isActive,
 }) {
   return (
-    <div className='d-flex w-100 justify-content-start'>
+    <div className={styles.UserStatus_container}>
       <div>
         {isActive ? (
           <StyledBadge
@@ -51,22 +53,22 @@ export default function UserStatus({
             variant='dot'
           >
             <Avatar sx={{ ...sizes, border: `${isActive ? '1px solid #44b700' : ''}` }} src={img}>
-              {!img ? <AccountCircleIcon sx={{ width: '60%', height: '60%' }} /> : null}
+              {!img ? <AccountCircleIcon className={styles.icon_sizes} /> : null}
             </Avatar>
           </StyledBadge>
         ) : (
           <Badge>
             <Avatar sx={{ ...sizes }} src={img}>
-              {!img ? <AccountCircleIcon sx={{ width: '60%', height: '60%' }} /> : null}
+              {!img ? <AccountCircleIcon className={styles.icon_sizes} /> : null}
             </Avatar>
           </Badge>
         )}
       </div>
       <div>
-        <Typography sx={{ marginLeft: '10px', fontSize: '14px' }} variant='h7'>
+        <Typography className={styles.title_txt} variant='h7'>
           <strong>{title}</strong>
         </Typography>
-        <Typography variant='subtitle2' sx={{ marginLeft: '10px', fontSize: '12px' }} color='gray'>
+        <Typography variant='subtitle2' className={styles.desc_txt} color='gray'>
           {description}
         </Typography>
       </div>
