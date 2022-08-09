@@ -10,8 +10,8 @@ export const theme = createTheme({
       main: '#0044ff',
       contrastText: '#ffcc00',
     },
-    custom: {
-      main: '#9c27b0',
+    neutral: {
+      main: '#ff4400',
       light: '#ffa726',
       dark: '#ef6c00',
       contrastText: '#9c27b0',
@@ -22,17 +22,17 @@ export const theme = createTheme({
   typography: {
     fontFamily: 'Raleway, Arial',
   },
-  //   components: {
-  //     MuiCssBaseline: {
-  //       styleOverrides: `
+  // components: {
+  //   MuiCssBaseline: {
+  //     styleOverrides: `
   //         @font-face {
   //           font-family: 'Raleway';
   //           font-style: normal;
   //           font-display: swap;
   //           font-weight: 400;
-  //           src: local('Raleway'), local('Raleway-Regular'), url(}) format('woff2');
+  //           src: local('Raleway'), local('Raleway-Regular'), url({}) format('woff2');
   //         }
   //       `,
-  //     },
   //   },
+  // },
 })

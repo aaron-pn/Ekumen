@@ -1,0 +1,35 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.containerText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+
+
+
+.containerText h2 {
+    margin-bottom: 20px;
+}
+.containerText h4 {
+    margin-bottom: 20px;
+}
+
+.containerPaperGoogle {
+    padding: 10px 30px;
+}
+.backgroundLogin{
+    background: var(--gradiant-mood-light);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    width: 100%;
+
+}

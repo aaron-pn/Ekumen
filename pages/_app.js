@@ -7,10 +7,12 @@ import { wrapper, store } from '../redux/Store'
 import { Provider, useSelector } from 'react-redux'
 
 import { ToastContainer } from 'react-toastify'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/globals.css'
 import { ThemeProvider } from '@mui/material'
 import { theme } from 'styles/theme'
+
+import '../styles/colors.css'
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
