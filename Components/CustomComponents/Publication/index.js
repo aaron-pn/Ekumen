@@ -4,53 +4,71 @@ import Image from 'next/image'
 
 import UserStatus from '../UserStatus'
 
-import { Button, Grid, IconButton, Typography } from '@mui/material'
+import { Button, Grid, IconButton, styled, Typography } from '@mui/material'
 import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined'
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt'
 import ShareIcon from '@mui/icons-material/Share'
 
-import styles from './Publication.module.css'
+const PublicationContainer = styled(Grid)`
+  padding: 16px;
+  min-height: 150px;
+`
+
+const MediaContainer = styled(Grid)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
+`
+
+const NavigationBar = styled('div')`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+`
+
+const GroupIconButtons = styled('div')`
+  display: flex;
+  align-items: center;
+  min-width: 40%;
+`
 
 export default function Publication({ text, img }) {
   return (
     <Grid container justifyContent='center'>
       <Grid item sm={12} md={10.8}>
-        <Grid className={styles.publication_container} container justifyContent={'center'}>
+        <PublicationContainer container justifyContent={'center'}>
           <Grid item xs={10}>
             <div>
               <UserStatus title={'kyle fisher'} description={'hoy 11:30'} />
             </div>
           </Grid>
-          <Grid
-            className={styles.media_container}
-            item
-            xs={9}
-          >
+          <MediaContainer item xs={9}>
             <Typography paragraph>{text}</Typography>
 
             {img ? <Image src={img} width={2000} height={800} /> : null}
-          </Grid>
+          </MediaContainer>
           <Grid item xs={10}>
-            <div className={styles.navigation_bar}>
-              <div className={styles.icon_buttons}>
+            <NavigationBar>
+              <GroupIconButtons>
                 <IconButton>
                   <ThumbUpOffAltIcon />
                 </IconButton>
-                <IconButton className={styles.space}>
+                <IconButton sx={{ marginLeft: '20%' }}>
                   <CommentOutlinedIcon />
                 </IconButton>
-              </div>
+              </GroupIconButtons>
               <div>
-                <Grid item xs={7} sm={4} className={styles.align_end}>
+                <Grid item xs={7} sm={4} sx={{ textAlign: 'end' }}>
                   <Button>
                     <ShareIcon />
                     Compartir
                   </Button>
                 </Grid>
               </div>
-            </div>
+            </NavigationBar>
           </Grid>
-        </Grid>
+        </PublicationContainer>
       </Grid>
     </Grid>
   )
