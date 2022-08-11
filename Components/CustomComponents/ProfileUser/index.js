@@ -1,7 +1,7 @@
-import { Avatar, Grid, styled, Typography } from '@mui/material'
-import Image from 'next/image'
 import React from 'react'
-import londresImage from './../../../public/Rutas-por-Londres.jpg'
+import Image from 'next/image'
+
+import { Avatar, Grid, styled, Typography } from '@mui/material'
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined'
 
 const DEFAULTAVATARSIZE = { width: 95, height: 95 }
@@ -35,12 +35,18 @@ const StyledUbication = styled(Typography)`
   margin-right: 30px;
 `
 
-export default function ProfileUser({ avatarSize = DEFAULTAVATARSIZE, title, desc, src }) {
+export default function ProfileUser({
+  avatarSize = DEFAULTAVATARSIZE,
+  title,
+  desc,
+  avatar,
+  banner,
+}) {
   return (
     <StyledDiv centred border minHeight='300px' width='80%'>
       <StyledDiv relative>
         <StyledDiv fullWidth minHeight='200px' relative>
-          <Image src={londresImage} objectFit='cover' layout='fill' />
+          <Image src={banner} objectFit='cover' layout='fill' />
           <StyledDiv absolute minHeight='auto' style={{ bottom: '-60px', left: '6%' }}>
             <WhiteAvatar sx={avatarSize}>
               <Avatar
