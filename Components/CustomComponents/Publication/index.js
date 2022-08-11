@@ -9,6 +9,7 @@ import CommentOutlinedIcon from '@mui/icons-material/CommentOutlined'
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt'
 import ShareIcon from '@mui/icons-material/Share'
 
+
 const PublicationContainer = styled(Grid)`
   padding: 16px;
   min-height: 150px;
@@ -33,6 +34,12 @@ const GroupIconButtons = styled('div')`
   min-width: 40%;
 `
 
+const ImagenContainer = styled('div')`
+  width: 100%;
+  position: relative;
+  height: 300px;
+`
+
 export default function Publication({ text, img }) {
   return (
     <Grid container justifyContent='center'>
@@ -45,8 +52,9 @@ export default function Publication({ text, img }) {
           </Grid>
           <MediaContainer item xs={9}>
             <Typography paragraph>{text}</Typography>
-
-            {img ? <Image src={img} width={2000} height={800} /> : null}
+            <ImagenContainer>
+              {img && <Image src={img} layout='fill' objectFit='scale-down' />}
+            </ImagenContainer>
           </MediaContainer>
           <Grid item xs={10}>
             <NavigationBar>

@@ -1,10 +1,7 @@
 import React from 'react'
 
 import styled from 'styled-components'
-import { Avatar, Badge, Typography } from '@mui/material'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-
-import styles from './UserStatus.module.css'
+import { Avatar, Badge, Grid, Typography } from '@mui/material'
 
 const StyledBadge = styled(Badge)(({ theme }) => {
   return {
@@ -44,34 +41,33 @@ export default function UserStatus({
   isActive,
 }) {
   return (
-    <div className={styles.UserStatus_container}>
-      <div>
+    <Grid container justifyContent='start' sx={{ width: '100%' }}>
+      <Grid item>
         {isActive ? (
           <StyledBadge
             overlap='circular'
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             variant='dot'
           >
-            <Avatar sx={{ ...sizes, border: `${isActive ? '1px solid #44b700' : ''}` }} src={img}>
-              {!img ? <AccountCircleIcon className={styles.icon_sizes} /> : null}
-            </Avatar>
+            <Avatar
+              sx={{ ...sizes, border: `${isActive ? '1px solid #44b700' : ''}` }}
+              src={img}
+            ></Avatar>
           </StyledBadge>
         ) : (
           <Badge>
-            <Avatar sx={{ ...sizes }} src={img}>
-              {!img ? <AccountCircleIcon className={styles.icon_sizes} /> : null}
-            </Avatar>
+            <Avatar sx={{ ...sizes }} src={img}></Avatar>
           </Badge>
         )}
-      </div>
-      <div>
-        <Typography className={styles.title_txt} variant='h7'>
+      </Grid>
+      <Grid Item>
+        <Typography variant='h7'>
           <strong>{title}</strong>
         </Typography>
-        <Typography variant='subtitle2' className={styles.desc_txt} color='gray'>
+        <Typography variant='subtitle2' color='gray'>
           {description}
         </Typography>
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   )
 }
